@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+
+    <meta charset="UTF-8">
+<div style="text-align: center;">
+    <title>Movie Rating Prediction</title>
+
+    <!-- Loading font types -->
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+    </head>
+
+    <body onload="myFunction()">
+        
+        <div class="login">
+            <h1>Movie Rating Prediction!</h1>
+
+            <!-- Main Input For Receiving Query to our ML -->
+            <form action="{{ url_for('predict')}}"method="POST">
+                <input id='overview' type="text" name="overview" placeholder="Enter overview" required="required" size="25" style="font-size:25px;"/>
+                <br><br>
+                <input id='directors' type="text" name="directors" placeholder="Enter directors" required="required" size="25" style="font-size:25px;"/>
+                <br><br>
+                <input id='actors' type="text" name="actors" placeholder="Enter actors" required="required" size="25" style="font-size:25px;"/>
+                <br><br>
+                <input id='genre' type="text" name="genre" placeholder="Enter genre" required="required" size="25" style="font-size:25px;"/>
+                <br><br>
+                <button id='button' type="submit" class="btn btn-primary btn-block btn-large" style="font-size: 20px;">Predict</button>
+            </form>
+
+            <br>
+            <h1>
+                {{ pred_final }}
+            </h1>
+        </div>
+        <div>
+            <h3>
+                1) Please Enter the actor names without space between first and last name and enter 3 names<br>
+                2) Enter 3 genre. <br><br>
+                Example:<br>
+                Overview - Overview of the Movie<br>
+                Actors - amandaplummer saskiareeves kathyjamieson<br>
+                Director - 'michaelwinterbottom<br>
+                Genre - Comedy Drama Romance<br>
+            </h3>
+        </div>
+        </div>
+    </body>
+</html>
